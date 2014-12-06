@@ -1,6 +1,6 @@
 '''
 Body mass index v.1
-NUI
+NUI & TUKTA
 '''
 from Tkinter import *
 
@@ -52,31 +52,42 @@ class Calculate():
         self.master.configure(bg = '#ffffff')
         
         #Logo
-        Label(self.master, text='Calculate Your BMI', font=("Helvetica", 30), bg = '#ffffff').place(x=10, y=10)
+        logo = Label(self.master, text='Calculate Your BMI', font=("Helvetica", 30), bg = '#ffffff')
+        logo.place(x=10, y=10)
 
-        #Input Weight
+        #Input Weight & String
         self.weight = Entry(self.master)
-        self.weight.place(x=30, y=80)
+        self.weight.place(x=110, y=105)
+        label_weight = Label(self.master, text='weight (Kg)', font=("Helvetica", 12), bg = '#ffffff')
+        label_weight.place(x=10, y=100)
 
-        #Input Height
+        #Input Height & Sttring
         self.height = Entry(self.master)
-        self.height.place(x=30, y=120)
+        self.height.place(x=110, y=155)
+        label_heigh = Label(self.master, text='height (Cm)', font=("Helvetica", 12), bg = '#ffffff')
+        label_heigh.place(x=10, y=150)
 
-        #Calculate
+        #Calculate Button
         cal = Button(self.master, text="Calculate", width=10, command=self.callback, relief=RIDGE)
-        cal.place(x=30, y=200)
+        cal.place(x=70, y=200)
 
-        #test
-        self.v = StringVar()
-        Label(self.master, background='#ffffff', textvariable=self.v).place(x=200, y=120)
+        #BMI label
+        self.update = StringVar()
+        label_bmi = Label(self.master, font=("Helvetica", 20), background='#ffffff', textvariable=self.update)
+        label_you = Label(self.master, text='Your BMI is : ', font=("Helvetica", 15), background= '#ffffff')
+        label_you.place(x=10, y=270)
+        label_bmi.place(x=140, y=265)
+        
+        
         self.master.mainloop()
 
+        
     def callback(self):
         weight = int(self.weight.get())
         height = int(self.height.get())
         bmi = weight/((height/100.0)**2)
-        self.v.set('Your BMI is : '+('%.2f' % bmi))
-        
+        self.update.set('%.2f' % bmi)
+
         
 class About():
     def __init__(self):

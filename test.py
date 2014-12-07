@@ -133,5 +133,39 @@ class About():
         self.maste.geometry("500x400+500+100")
         self.maste.title("Body mass index")
         self.maste.resizable(width=FALSE, height=FALSE)
+
+        #Background Color
+        self.master.configure(bg = '#ffffff')
+
+        #about
+        text_a = Message(self.master, text="\n\tThe body mass index (BMI), or Quetelet index, is a measure "
+                         "of relative weight based on an individual's mass and height.\n\n"
+                         "\tA frequent use of the BMI is to assess how much an individual's body weight "
+                         "departs from what is normal or desirable for a person of his or her height.\n"
+                         "The weight excess or deficiency may, in part, be accounted for by body fat \n"
+                         "(adipose tissue) although other factors such as muscularity also affect BMI "
+                         "significantly (see discussion below and overweight). The WHO regards a BMI of "
+                         "less than 18.5 as underweight and may indicate malnutrition, an eating disorder, "
+                         "or other health problems, while a BMI greater than 25 is considered overweight and "
+                         "above 30 is considered obese. These ranges of BMI values are valid only as statistical "
+                         "categories\n\n", width=450, background = '#ffffff')
+        text_a.pack()
+
+        #Menu
+        f_menu = Button(self.master, text = 'Menu', bg = '#ffffff', command = self.menu, font=("Helvetica", 15), relief=RIDGE)
+        f_menu.place(x=60, y=340, width = 190)
+
+        #Exit
+        b_menu3 = Button(self.master, text = 'Exit', bg = '#ffffff', command = self.exits, font=("Helvetica", 15), relief=RIDGE)
+        b_menu3.place(x=270, y=340, width = 190)
+
+        self.master.mainloop()
+
+    def menu(self):
+        self.master.destroy()
+        Menu()
+
+    def exits(self):
+        self.master.destroy()
         
 Menu()  

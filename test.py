@@ -129,10 +129,10 @@ class Calculate():
         self.master.destroy()
 class About():
     def __init__(self):
-        self.maste = Tk()
-        self.maste.geometry("500x400+500+100")
-        self.maste.title("Body mass index")
-        self.maste.resizable(width=FALSE, height=FALSE)
+        self.master = Tk()
+        self.master.geometry("500x400+500+100")
+        self.master.title("Body mass index")
+        self.master.resizable(width=FALSE, height=FALSE)
 
         #Background Color
         self.master.configure(bg = '#ffffff')

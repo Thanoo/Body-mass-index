@@ -78,21 +78,21 @@ class Calculate():
             #Input Weight
             self.frame = Frame(self.master, width=300, height=130, bg='#ffffff')
             self.frame.place(x=30,y=400)
-            weight_entry = Entry(self.frame, bg='#ffffff')
-            weight_entry.place(x=65, y=12)
+            self.weight_entry = Entry(self.frame, bg='#ffffff')
+            self.weight_entry.place(x=65, y=13)
             weight_label = Label(self.frame, text='weight', font=("Helvetica", 12), bg = '#ffffff')
             weight_label.place(x=10, y=10)
             Label(self.frame, text='kg', font=("Helvetica", 12), bg = '#ffffff').place(x=190, y=12)
             Label(self.frame, text='cm', font=("Helvetica", 12), bg = '#ffffff').place(x=190, y=50)
             #Input Height
-            height_entry = Entry(self.frame)
-            height_entry.place(x=65, y=50)
+            self.height_entry = Entry(self.frame, bg='#ffffff')
+            self.height_entry.place(x=65, y=54)
             heigh_label = Label(self.frame, text='height', font=("Helvetica", 12), bg = '#ffffff')
             heigh_label.place(x=10, y=50)
 
             #Calculate Button
-            self.cal = Button(self.master, text="Calculate", width=10, command=self.callback, relief=RIDGE)
-            self.cal.place(x=100, y=490)
+            cal = Button(self.master, text="Calculate", width=10, command=self.cal_metric, relief=RIDGE)
+            cal.place(x=130, y=490)
 
             #BMI label
             self.update = StringVar()
@@ -130,52 +130,64 @@ class Calculate():
             #Input Weight
             self.frame = Frame(self.master, width=300, height=130, bg='#ffffff')
             self.frame.place(x=30,y=400)
-            weight_entry = Entry(self.frame, bg='#ffffff')
-            weight_entry.place(x=65, y=12)
+            self.weight_entry = Entry(self.frame, bg='#ffffff')
+            self.weight_entry.place(x=65, y=13)
             weight_label = Label(self.frame, text='weight', font=("Helvetica", 12), bg = '#ffffff')
             weight_label.place(x=10, y=10)
             Label(self.frame, text='kg', font=("Helvetica", 12), bg = '#ffffff').place(x=190, y=12)
             Label(self.frame, text='cm', font=("Helvetica", 12), bg = '#ffffff').place(x=190, y=50)
             #Input Height
-            height_entry = Entry(self.frame)
-            height_entry.place(x=65, y=50)
+            self.height_entry = Entry(self.frame, bg='#ffffff')
+            self.height_entry.place(x=65, y=54)
             heigh_label = Label(self.frame, text='height', font=("Helvetica", 12), bg = '#ffffff')
             heigh_label.place(x=10, y=50)
-            cal = Button(self.master, text="Calculate", width=10, command=self.callback, relief=RIDGE)
+            cal = Button(self.master, text="Calculate", width=10, command=self.cal_metric, relief=RIDGE)
             cal.place(x=130, y=490)
+
 
       def standard(self):
             self.frame.destroy()
             #Input Weight
             self.frame = Frame(self.master, width=300, height=130, bg='#ffffff')
             self.frame.place(x=30,y=400)
-            weight_entry = Entry(self.frame)
-            weight_entry.place(x=65, y=13)
+            self.weight_entry = Entry(self.frame, bg='#ffffff')
+            self.weight_entry.place(x=65, y=13)
             weight_label = Label(self.frame, text='weight', font=("Helvetica", 12), bg = '#ffffff')
             weight_label.place(x=10, y=10)
             Label(self.frame, text='ft', font=("Helvetica", 12), bg = '#ffffff').place(x=135, y=50)
             Label(self.frame, text='in', font=("Helvetica", 12), bg = '#ffffff').place(x=237, y=50)
             Label(self.frame, text='lbs', font=("Helvetica", 12), bg = '#ffffff').place(x=190, y=10)
             #Input Height
-            height_ft_entry = Entry(self.frame, width=10, bg='#ffffff')
-            height_ft_entry.place(x=65, y=54)
-            height_in_entry = Entry(self.frame, width=10, bg='#ffffff')
-            height_in_entry.place(x=165, y=54)
+            self.height_ft_entry = Entry(self.frame, width=10, bg='#ffffff')
+            self.height_ft_entry.place(x=65, y=54)
+            self.height_in_entry = Entry(self.frame, width=10, bg='#ffffff')
+            self.height_in_entry.place(x=165, y=54)
             heigh_label = Label(self.frame, text='height', font=("Helvetica", 12), bg = '#ffffff')
             heigh_label.place(x=10, y=50)
-            cal = Button(self.master, text="Calculate", width=10, command=self.callback, relief=RIDGE)
+            cal = Button(self.master, text="Calculate", width=10, command=self.cal_standard, relief=RIDGE)
             cal.place(x=130, y=490)
       
-      def callback(self):
+      def cal_metric(self):
             try:
-                  weight = int(self.weight.get())
-                  height = int(self.height.get())
+                  weight = float(self.weight_entry.get())
+                  height = float(self.height_entry.get())
                   self.bmi = weight/((height/100.0)**2)
                   self.update.set('%.2f' % self.bmi)
                   self.label_bmi1.place_forget()
                   self.bmi_table()
             except:
                   tkMessageBox.showerror('Error!', 'Error')
+
+      def cal_standard(self):
+            weight = float(self.weight_entry.get())
+            height_in = (float(self.height_ft_entry.get())*12) + float(self.height_in_entry.get())
+            self.bmi = (weight*703.0)/(height_in)**2
+            self.update.set('%.2f' % self.bmi)
+            self.label_bmi1.place_forget()
+            self.bmi_table()
+            '''except:
+                  tkMessageBox.showerror('Error!', 'Error')'''
+                  
       def bmi_table(self):
             if self.bmi < 18.5:
                   table = Label(self.master, image=self.table1, bg='#ffffff')

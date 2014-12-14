@@ -180,17 +180,17 @@ class Calculate():
                   table.place(x=30, y=270)
                   pic = Label(self.master, image = self.pic1, bg = '#ffffff')
                   pic.place(x=375, y=150)
-            elif self.bmi >= 18.5 and self.bmi <= 22.9:
+            elif self.bmi >= 18.5 and self.bmi < 23:
                   table = Label(self.master, image = self.table2, bg = '#ffffff')
                   table.place(x=30, y=270)
                   pic = Label(self.master, image = self.pic2, bg = '#ffffff')
                   pic.place(x=375, y=150)
-            elif self.bmi >= 23 and self.bmi <= 24.9:
+            elif self.bmi >= 23 and self.bmi < 25:
                   table = Label(self.master, image = self.table3, bg = '#ffffff')
                   table.place(x=30, y=270)
                   pic = Label(self.master, image = self.pic3, bg = '#ffffff')
                   pic.place(x=375, y=150)
-            elif self.bmi >= 25 and self.bmi <= 29.9:
+            elif self.bmi >= 25 and self.bmi < 30:
                   table = Label(self.master, image = self.table4, bg = '#ffffff')
                   table.place(x=30, y=270)
                   pic = Label(self.master, image = self.pic4, bg = '#ffffff')

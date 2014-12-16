@@ -17,22 +17,29 @@ class Menu():
             self.master.resizable(width=FALSE, height=FALSE)
         
             #Background Color
-            self.master.configure(bg = '#b0e0e6')
+            #self.master.configure(bg = '#b0e0e6')
+
+            #Background Image#
+            photo = PhotoImage(file = "image/bg.gif")
+            b_main = Label(self.master, image = photo)
+            b_main.place(x=0, y=0)
         
             #Logo
-            Label(self.master, fg = 'white', bg = '#b0e0e6', text = 'Body mass index', font = ("Helvetica", 30)).place(x=110, y=30)
+            #Label(self.master, fg = '#ffffff', bg = '#b0e0e6', text = 'Body mass index', font = ("Helvetica", 30)).place(x=110, y=30)
 
             #Menu Button
             #Calculate Your BMI
-            '''b1 = PhotoImage(file = "testbut.gif")'''
-            b_menu1 = Button(self.master, text = 'Calculate Your BMI', bg = '#ffffff', command = self.calculate, font = ("Helvetica", 15), relief = GROOVE)
-            b_menu1.place(x=30, y=145, width = 190)
+            b_photo1 = PhotoImage(file = "image/b_calculate.gif")
+            b_menu1 = Button(self.master, image=b_photo1, bg = '#ffffff', command = self.calculate, relief = GROOVE)
+            b_menu1.place(x=30, y=145)
             #About
-            b_menu2 = Button(self.master, text = 'About', bg = '#ffffff', command = self.about, font = ("Helvetica", 15), relief = RIDGE)
-            b_menu2.place(x=30, y=200, width = 190)
+            b_photo2 = PhotoImage(file='image/b_about.gif')
+            b_menu2 = Button(self.master, image=b_photo2, bg = '#ffffff', command = self.about, relief = RIDGE)
+            b_menu2.place(x=30, y=200)
             #Exit
-            b_menu3 = Button(self.master, text = 'Exit', bg = '#ffffff', command = self.exits, font = ("Helvetica", 15), relief = RIDGE)
-            b_menu3.place(x=30, y=255, width=190)
+            b_photo3 = PhotoImage(file='image/b_exit.gif')
+            b_menu3 = Button(self.master, image=b_photo3, bg = '#ffffff', command = self.exits, relief = RIDGE)
+            b_menu3.place(x=30, y=255)
         
             self.master.mainloop()
       def calculate(self):
@@ -52,11 +59,11 @@ class Calculate():
             #self.master.resizable(width=FALSE, height=FALSE)
         
             #Background Color
-            self.master.configure(bg = '#ffffff')
+            self.master.configure(bg = '#b0e0e6')
             
         
             #Logo
-            logo = Label(self.master, text = 'Calculate Your BMI', font = ("Helvetica", 30), bg = '#ffffff')
+            logo = Label(self.master, text = 'Calculate Your BMI', font = ("Helvetica", 30), bg = '#b0e0e6')
             logo.place(x=30, y=20)
 
             #Back to menu
@@ -80,11 +87,11 @@ class Calculate():
 
             #Result BMI label
             self.update = StringVar()
-            label_bmi = Label(self.master, text = '0', font = ("Helvetica", 20), background = '#ffffff', textvariable = self.update)
+            label_bmi = Label(self.master, text = '0', font = ("Helvetica", 20), background = '#b0e0e6', textvariable = self.update)
             label_bmi.place(x=500, y=95)
-            label_you = Label(self.master, text = 'Your BMI is : ', font = ("Helvetica", 15), background = '#ffffff')
+            label_you = Label(self.master, text = 'Your BMI is : ', font = ("Helvetica", 15), background = '#b0e0e6')
             label_you.place(x=375, y=100)
-            self.label_zero = Label(self.master, text = '0', font = ("Helvetica", 20), background = '#ffffff')
+            self.label_zero = Label(self.master, text = '0', font = ("Helvetica", 20), background = '#b0e0e6')
             self.label_zero.place(x=500, y=95)
 
             #BMI Table
@@ -110,18 +117,18 @@ class Calculate():
 
       def metric(self):
             self.frame.destroy()
-            self.frame = Frame(self.master, width = 300, height = 130, bg = '#ffffff')
+            self.frame = Frame(self.master, width = 300, height = 130, bg = '#b0e0e6')
             self.frame.place(x=30, y=130)
             #Input Label
-            weight_label = Label(self.frame, text = 'weight', font = ("Helvetica", 12), bg = '#ffffff')
+            weight_label = Label(self.frame, text = 'weight', font = ("Helvetica", 12), bg = '#b0e0e6')
             weight_label.place(x=10, y=10)
-            heigh_label = Label(self.frame, text = 'height', font = ("Helvetica", 12), bg = '#ffffff')
+            heigh_label = Label(self.frame, text = 'height', font = ("Helvetica", 12), bg = '#b0e0e6')
             heigh_label.place(x=10, y=50)
             #Input Weight
             self.weight_entry = Entry(self.frame, bg='#ffffff')
             self.weight_entry.place(x=65, y=13)
-            Label(self.frame, text = 'kg', font = ("Helvetica", 12), bg = '#ffffff').place(x=190, y=12)
-            Label(self.frame, text = 'cm', font = ("Helvetica", 12), bg = '#ffffff').place(x=190, y=50)
+            Label(self.frame, text = 'kg', font = ("Helvetica", 12), bg = '#b0e0e6').place(x=190, y=12)
+            Label(self.frame, text = 'cm', font = ("Helvetica", 12), bg = '#b0e0e6').place(x=190, y=50)
             #Input Height
             self.height_entry = Entry(self.frame, bg = '#ffffff')
             self.height_entry.place(x=65, y=54)
@@ -132,21 +139,21 @@ class Calculate():
       def standard(self):
             self.frame.destroy()
             #Input Weight
-            self.frame = Frame(self.master, width = 300, height = 130, bg = '#ffffff')
+            self.frame = Frame(self.master, width = 300, height = 130, bg = '#b0e0e6')
             self.frame.place(x=30, y=130)
             self.weight_entry = Entry(self.frame, bg = '#ffffff')
             self.weight_entry.place(x=65, y=13)
-            weight_label = Label(self.frame, text = 'weight', font = ("Helvetica", 12), bg = '#ffffff')
+            weight_label = Label(self.frame, text = 'weight', font = ("Helvetica", 12), bg = '#b0e0e6')
             weight_label.place(x=10, y=10)
-            Label(self.frame, text = 'ft', font = ("Helvetica", 12), bg = '#ffffff').place(x=135, y=50)
-            Label(self.frame, text = 'in', font = ("Helvetica", 12), bg = '#ffffff').place(x=237, y=50)
-            Label(self.frame, text = 'lbs', font = ("Helvetica", 12), bg = '#ffffff').place(x=190, y=10)
+            Label(self.frame, text = 'ft', font = ("Helvetica", 12), bg = '#b0e0e6').place(x=135, y=50)
+            Label(self.frame, text = 'in', font = ("Helvetica", 12), bg = '#b0e0e6').place(x=237, y=50)
+            Label(self.frame, text = 'lbs', font = ("Helvetica", 12), bg = '#b0e0e6').place(x=190, y=10)
             #Input Height
             self.height_ft_entry = Entry(self.frame, width = 10, bg = '#ffffff')
             self.height_ft_entry.place(x = 65, y = 54)
             self.height_in_entry = Entry(self.frame, width = 10, bg = '#ffffff')
             self.height_in_entry.place(x = 165, y = 54)
-            heigh_label = Label(self.frame, text='height', font = ("Helvetica", 12), bg = '#ffffff')
+            heigh_label = Label(self.frame, text='height', font = ("Helvetica", 12), bg = '#b0e0e6')
             heigh_label.place(x=10, y=50)
             cal = Button(self.frame, text = "Calculate", width = 10, command = self.cal_standard, relief = RIDGE)
             cal.place(x=80, y=90)
@@ -217,22 +224,29 @@ class About():
             self.master.resizable(width = FALSE, height = FALSE)
 
             #Background Color
-            self.master.configure(bg = '#ffffff')
+            #self.master.configure(bg = '#ffffff')
+
+            #Background Image#
+            pic = PhotoImage(file = "image/bg2.gif")
+            b_main = Label(self.master, image = pic)
+            b_main.place(x=0, y=0)
 
             #about
-            text_a = Message(self.master, text="\nProvider", width=450, font = ("Helvetica", 20), background = '#ffffff')
-            text_b = Message(self.master, text="\nThanoo Chomyad 57070051"
-                             "\nBusakorn Yuangngoen 57070062", width=450, font = ("Helvetica", 15), background = '#ffffff')
-            text_a.pack()
-            text_b.pack()
+            #text_a = Message(self.master, text="\nProvider", width=450, font = ("Helvetica", 20), background = '#ffffff')
+            #text_b = Message(self.master, text="\nThanoo Chomyad 57070051"
+            #                "\nBusakorn Yuangngoen 57070062", width=450, font = ("Helvetica", 15), background = '#ffffff')
+            #text_a.pack()
+            #text_b.pack()
 
             #Menu
-            f_menu = Button(self.master, text = 'Menu', bg = '#ffffff', command = self.menu, font = ("Helvetica", 15), relief = RIDGE)
-            f_menu.place(x=60, y=340, width=190)
+            b_pic1 = PhotoImage(file='image/b_menu.gif')
+            f_menu = Button(self.master, image=b_pic1, command = self.menu, relief = RIDGE)
+            f_menu.place(x=60, y=300)
 
             #Exit
-            b_menu3 = Button(self.master, text = 'Exit', bg = '#ffffff', command = self.exits, font = ("Helvetica", 15), relief = RIDGE)
-            b_menu3.place(x=270, y=340, width=190)
+            b_pic2 = PhotoImage(file='image/b_exit.gif')
+            b_menu3 = Button(self.master, image=b_pic2, command = self.exits, relief = RIDGE)
+            b_menu3.place(x=270, y=300)
 
             self.master.mainloop()
 

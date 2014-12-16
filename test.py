@@ -89,12 +89,12 @@ class Calculate():
 
             #Result BMI label
             self.update = StringVar()
-            label_bmi = Label(self.master, text = '0', font = ("Helvetica", 20), bg = '#8fc9ff', textvariable = self.update)
-            label_bmi.place(x=500, y=95)
-            label_you = Label(self.master, text = 'Your BMI is : ', font = ("Helvetica", 15), background = '#8fc9ff')
-            label_you.place(x=375, y=100)
-            self.label_zero = Label(self.master, text = '0', font = ("Helvetica", 20), bg = '#8fc9ff')
-            self.label_zero.place(x=500, y=95)
+            label_bmi = Label(self.master, text = '0', fg = 'white', font = ("Helvetica", 17), bg = '#8fc9ff', textvariable = self.update)
+            label_bmi.place(x=510, y=110)
+            label_you = Label(self.master, text = 'Your BMI is : ', fg = 'white', font = ("Helvetica", 17), background = '#8fc9ff')
+            label_you.place(x=370, y=110)
+            self.label_zero = Label(self.master, text = '0', fg = 'white', font = ("Helvetica", 17), bg = '#8fc9ff')
+            self.label_zero.place(x=510, y=110)
 
             #BMI Table
             table = PhotoImage(file = "image/bmi_table.gif")
@@ -108,7 +108,7 @@ class Calculate():
 
             #BMI Picture
             pic = PhotoImage(file = "image/normal.gif")
-            Label(self.master, image = pic, bg = '#ffffff').place(x=375, y=150)
+            Label(self.master, image = pic, bg = '#8fc9ff').place(x=375, y=180)
             self.pic1 = PhotoImage(file = "image/under.gif")
             self.pic2 = PhotoImage(file = "image/normal.gif")
             self.pic3 = PhotoImage(file = "image/risk.gif")
@@ -188,30 +188,30 @@ class Calculate():
       def bmi_table(self):
             self.table.place_forget()
             if self.bmi < 18.5:
-                  table = Label(self.master, image = self.table1, bg = '#ffffff')
+                  table = Label(self.master, image = self.table1, bg = '#8fc9ff')
                   table.place(x=30, y=300)
-                  pic = Label(self.master, image = self.pic1, bg = '#ffffff')
-                  pic.place(x=375, y=150)
+                  pic = Label(self.master, image = self.pic1, bg = '#8fc9ff')
+                  pic.place(x=375, y=180)
             elif self.bmi >= 18.5 and self.bmi < 23:
-                  table = Label(self.master, image = self.table2, bg = '#ffffff')
+                  table = Label(self.master, image = self.table2, bg = '#8fc9ff')
                   table.place(x=30, y=300)
-                  pic = Label(self.master, image = self.pic2, bg = '#ffffff')
-                  pic.place(x=375, y=150)
+                  pic = Label(self.master, image = self.pic2, bg = '#8fc9ff')
+                  pic.place(x=375, y=180)
             elif self.bmi >= 23 and self.bmi < 25:
-                  table = Label(self.master, image = self.table3, bg = '#ffffff')
+                  table = Label(self.master, image = self.table3, bg = '#8fc9ff')
                   table.place(x=30, y=300)
-                  pic = Label(self.master, image = self.pic3, bg = '#ffffff')
-                  pic.place(x=375, y=150)
+                  pic = Label(self.master, image = self.pic3, bg = '#8fc9ff')
+                  pic.place(x=375, y=180)
             elif self.bmi >= 25 and self.bmi < 30:
-                  table = Label(self.master, image = self.table4, bg = '#ffffff')
+                  table = Label(self.master, image = self.table4, bg = '#8fc9ff')
                   table.place(x=30, y=300)
-                  pic = Label(self.master, image = self.pic4, bg = '#ffffff')
-                  pic.place(x=375, y=150)
+                  pic = Label(self.master, image = self.pic4, bg = '#8fc9ff')
+                  pic.place(x=375, y=180)
             else:
-                  table = Label(self.master, image = self.table5, bg = '#ffffff')
+                  table = Label(self.master, image = self.table5, bg = '#8fc9ff')
                   table.place(x=30, y=300)
-                  pic = Label(self.master, image = self.pic5, bg = '#ffffff')
-                  pic.place(x=375, y=150)
+                  pic = Label(self.master, image = self.pic5, bg = '#8fc9ff')
+                  pic.place(x=375, y=180)
 
  
       def back(self):

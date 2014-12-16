@@ -25,13 +25,13 @@ class Menu():
             #Menu Button
             #Calculate Your BMI
             '''b1 = PhotoImage(file = "testbut.gif")'''
-            b_menu1 = Button(self.master, text = 'Calculate Your BMI', bg = '#0061ff', command = self.calculate, font = ("Helvetica", 15), relief = GROOVE)
+            b_menu1 = Button(self.master, text = 'Calculate Your BMI', bg = '#cef590', command = self.calculate, font = ("Helvetica", 15), relief = GROOVE)
             b_menu1.place(x=30, y=145, width = 190)
             #About
-            b_menu2 = Button(self.master, text = 'About', bg = '#0061ff', command = self.about, font = ("Helvetica", 15), relief = RIDGE)
+            b_menu2 = Button(self.master, text = 'About', bg = '#cef590', command = self.about, font = ("Helvetica", 15), relief = RIDGE)
             b_menu2.place(x=30, y=200, width = 190)
             #Exit
-            b_menu3 = Button(self.master, text = 'Exit', bg = '#ff0000', command = self.exits, font = ("Helvetica", 15), relief = RIDGE)
+            b_menu3 = Button(self.master, text = 'Exit', bg = '#cef590', command = self.exits, font = ("Helvetica", 15), relief = RIDGE)
             b_menu3.place(x=30, y=255, width=190)
         
             self.master.mainloop()
@@ -220,17 +220,17 @@ class About():
 
             #about
             text_a = Message(self.master, text="\nProvider", width=450, font = ("Helvetica", 20), background = '#b0e0e6')
-            text_b = Message(self.master, text="\nThanoo Chomyad 57070051"
+            text_b = Message(self.master, text="\nThanoo    Chomyad     57070051"
                             "\nBusakorn Yuangngoen 57070062", width=450, font = ("Helvetica", 15), background = '#b0e0e6')
             text_a.pack()
             text_b.pack()
 
             #Menu
-            f_menu = Button(self.master, text = 'Menu', bg = '#0061ff', command = self.menu, font = ("Helvetica", 15), relief = RIDGE)
+            f_menu = Button(self.master, text = 'Menu', bg = '#cef590', command = self.menu, font = ("Helvetica", 15), relief = RIDGE)
             f_menu.place(x=60, y=340, width=190)
 
             #Exit
-            b_menu3 = Button(self.master, text = 'Exit', bg = '#ff0000', command = self.exits, font = ("Helvetica", 15), relief = RIDGE)
+            b_menu3 = Button(self.master, text = 'Exit', bg = '#cef590', command = self.exits, font = ("Helvetica", 15), relief = RIDGE)
             b_menu3.place(x=270, y=340, width=190)
 
             self.master.mainloop()

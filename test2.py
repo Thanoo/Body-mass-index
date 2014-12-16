@@ -17,29 +17,22 @@ class Menu():
             self.master.resizable(width=FALSE, height=FALSE)
         
             #Background Color
-            #self.master.configure(bg = '#b0e0e6')
-
-            #Background Image#
-            photo = PhotoImage(file = "image/bg.gif")
-            b_main = Label(self.master, image = photo)
-            b_main.place(x=0, y=0)
-        
+            self.master.configure(bg = '#b0e0e6')
+            
             #Logo
-            #Label(self.master, fg = '#ffffff', bg = '#b0e0e6', text = 'Body mass index', font = ("Helvetica", 30)).place(x=110, y=30)
+            Label(self.master, fg = 'white', bg = '#b0e0e6', text = 'Body mass index', font = ("Helvetica", 30)).place(x=110, y=30)
 
             #Menu Button
             #Calculate Your BMI
-            b_photo1 = PhotoImage(file = "image/b_calculate.gif")
-            b_menu1 = Button(self.master, image=b_photo1, bg = '#ffffff', command = self.calculate, relief = GROOVE)
-            b_menu1.place(x=30, y=145)
+            '''b1 = PhotoImage(file = "testbut.gif")'''
+            b_menu1 = Button(self.master, text = 'Calculate Your BMI', bg = '#0061ff', command = self.calculate, font = ("Helvetica", 15), relief = GROOVE)
+            b_menu1.place(x=30, y=145, width = 190)
             #About
-            b_photo2 = PhotoImage(file='image/b_about.gif')
-            b_menu2 = Button(self.master, image=b_photo2, bg = '#ffffff', command = self.about, relief = RIDGE)
-            b_menu2.place(x=30, y=200)
+            b_menu2 = Button(self.master, text = 'About', bg = '#0061ff', command = self.about, font = ("Helvetica", 15), relief = RIDGE)
+            b_menu2.place(x=30, y=200, width = 190)
             #Exit
-            b_photo3 = PhotoImage(file='image/b_exit.gif')
-            b_menu3 = Button(self.master, image=b_photo3, bg = '#ffffff', command = self.exits, relief = RIDGE)
-            b_menu3.place(x=30, y=255)
+            b_menu3 = Button(self.master, text = 'Exit', bg = '#ff0000', command = self.exits, font = ("Helvetica", 15), relief = RIDGE)
+            b_menu3.place(x=30, y=255, width=190)
         
             self.master.mainloop()
       def calculate(self):
@@ -61,7 +54,6 @@ class Calculate():
             #Background Color
             self.master.configure(bg = '#b0e0e6')
             
-        
             #Logo
             logo = Label(self.master, text = 'Calculate Your BMI', font = ("Helvetica", 30), bg = '#b0e0e6')
             logo.place(x=30, y=20)
@@ -224,29 +216,22 @@ class About():
             self.master.resizable(width = FALSE, height = FALSE)
 
             #Background Color
-            #self.master.configure(bg = '#ffffff')
-
-            #Background Image#
-            pic = PhotoImage(file = "image/bg2.gif")
-            b_main = Label(self.master, image = pic)
-            b_main.place(x=0, y=0)
+            self.master.configure(bg = '#b0e0e6')
 
             #about
-            #text_a = Message(self.master, text="\nProvider", width=450, font = ("Helvetica", 20), background = '#ffffff')
-            #text_b = Message(self.master, text="\nThanoo Chomyad 57070051"
-            #                "\nBusakorn Yuangngoen 57070062", width=450, font = ("Helvetica", 15), background = '#ffffff')
-            #text_a.pack()
-            #text_b.pack()
+            text_a = Message(self.master, text="\nProvider", width=450, font = ("Helvetica", 20), background = '#b0e0e6')
+            text_b = Message(self.master, text="\nThanoo Chomyad 57070051"
+                            "\nBusakorn Yuangngoen 57070062", width=450, font = ("Helvetica", 15), background = '#b0e0e6')
+            text_a.pack()
+            text_b.pack()
 
             #Menu
-            b_pic1 = PhotoImage(file='image/b_menu.gif')
-            f_menu = Button(self.master, image=b_pic1, command = self.menu, relief = RIDGE)
-            f_menu.place(x=60, y=300)
+            f_menu = Button(self.master, text = 'Menu', bg = '#0061ff', command = self.menu, font = ("Helvetica", 15), relief = RIDGE)
+            f_menu.place(x=60, y=340, width=190)
 
             #Exit
-            b_pic2 = PhotoImage(file='image/b_exit.gif')
-            b_menu3 = Button(self.master, image=b_pic2, command = self.exits, relief = RIDGE)
-            b_menu3.place(x=270, y=300)
+            b_menu3 = Button(self.master, text = 'Exit', bg = '#ff0000', command = self.exits, font = ("Helvetica", 15), relief = RIDGE)
+            b_menu3.place(x=270, y=340, width=190)
 
             self.master.mainloop()
 

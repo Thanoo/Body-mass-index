@@ -17,7 +17,7 @@ class Menu():
             
             #Logo
             logo = PhotoImage(file = "image/Logo.gif")
-            Label(self.master, fg = 'white', bg = '#8fc9ff', image = logo, font = ("Helvetica", 30)).place(x=83, y=30)
+            Label(self.master, fg = 'white', bg = '#8fc9ff', image = logo).place(x=83, y=30)
 
             #Menu Button
             #Calculate Your BMI
@@ -54,6 +54,7 @@ class Calculate():
             self.master.configure(bg = '#8fc9ff')
             self.master.wm_iconbitmap('image/icon.ico')
             self.master.resizable(width=FALSE, height=FALSE)
+            
             #Logo
             logo2 = PhotoImage(file = "image/Logo2.gif")
             logo = Label(self.master, image = logo2, bg = '#8fc9ff')

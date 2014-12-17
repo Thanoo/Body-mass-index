@@ -12,10 +12,8 @@ class Menu():
             self.master = Tk()
             self.master.geometry("500x400+500+100")
             self.master.title("Body mass index")
-            self.master.resizable(width=FALSE, height=FALSE)
-        
-            #Background Color
             self.master.configure(bg = '#8fc9ff')
+            self.master.resizable(width=FALSE, height=FALSE)
             
             #Logo
             logo = PhotoImage(file = "image/Logo.gif")
@@ -50,11 +48,8 @@ class Calculate():
             self.master = Tk()
             self.master.geometry("670x600+400+70")
             self.master.title("Body mass index ~ Calculate Your BMI")
-            self.master.resizable(width=FALSE, height=FALSE)
-        
-            #Background Color
             self.master.configure(bg = '#8fc9ff')
-            
+            self.master.resizable(width=FALSE, height=FALSE)
             #Logo
             logo2 = PhotoImage(file = "image/Logo2.gif")
             logo = Label(self.master, image = logo2, bg = '#8fc9ff')
@@ -86,15 +81,15 @@ class Calculate():
             self.frame = Frame(self.master, width = 300, height = 130, bg = '#8fc9ff')
             self.standard()
 
-
             #Result BMI label
             self.update = StringVar()
             label_bmi = Label(self.master, text = '0', fg = 'white', font = ("Helvetica", 17), bg = '#8fc9ff', textvariable = self.update)
-            label_bmi.place(x=510, y=110)
-            label_you = Label(self.master, text = 'Your BMI is : ', fg = 'white', font = ("Helvetica", 17), background = '#8fc9ff')
-            label_you.place(x=370, y=110)
+            label_bmi.place(x=507, y=120)
             self.label_zero = Label(self.master, text = '0', fg = 'white', font = ("Helvetica", 17), bg = '#8fc9ff')
-            self.label_zero.place(x=510, y=110)
+            self.label_zero.place(x=507, y=120)
+            result = PhotoImage(file = "image/result.gif")
+            label_you = Label(self.master, image = result, fg = 'white', background = '#8fc9ff')
+            label_you.place(x=350, y=110)
 
             #BMI Table
             table = PhotoImage(file = "image/bmi_table.gif")
@@ -127,12 +122,12 @@ class Calculate():
             heigh_label = Label(self.frame, text = 'height', fg = 'white', font = ("Helvetica", 12), bg = '#6893ba')
             heigh_label.place(x=10, y=50)
             #Input Weight
-            self.weight_entry = Entry(self.frame, bg='#ffffff')
+            self.weight_entry = Entry(self.frame, fg= 'white', bg='#7cafde', relief = FLAT)
             self.weight_entry.place(x=65, y=13)
             Label(self.frame, text = 'kg', fg = 'white', font = ("Helvetica", 12), bg = '#6893ba').place(x=190, y=12)
             Label(self.frame, text = 'cm', fg = 'white', font = ("Helvetica", 12), bg = '#6893ba').place(x=190, y=50)
             #Input Height
-            self.height_entry = Entry(self.frame, bg = '#ffffff')
+            self.height_entry = Entry(self.frame, fg= 'white', bg='#7cafde', relief = FLAT)
             self.height_entry.place(x=65, y=54)
             self.cal_pic = PhotoImage(file = "image/calculate.gif")
             cal = Button(self.frame, image = self.cal_pic, command = self.cal_metric, relief = FLAT)
@@ -149,16 +144,16 @@ class Calculate():
             heigh_label = Label(self.frame, text='height', fg = 'white', font = ("Helvetica", 12), bg = '#6893ba')
             heigh_label.place(x=10, y=50)
             #Input Weight
-            self.weight_entry = Entry(self.frame, bg = '#ffffff')
+            self.weight_entry = Entry(self.frame, fg= 'white', bg='#7cafde', relief = FLAT)
             self.weight_entry.place(x=65, y=13)
-            Label(self.frame, text = 'ft', fg = 'white', font = ("Helvetica", 12), bg = '#6893ba').place(x=135, y=50)
-            Label(self.frame, text = 'in', fg = 'white', font = ("Helvetica", 12), bg = '#6893ba').place(x=237, y=50)
-            Label(self.frame, text = 'lbs', fg = 'white', font = ("Helvetica", 12), bg = '#6893ba').place(x=190, y=10)
+            Label(self.frame, text = 'ft', fg = 'white', font = ("Helvetica", 12), bg = '#6893ba').place(x=120, y=50)
+            Label(self.frame, text = 'in', fg = 'white', font = ("Helvetica", 12), bg = '#6893ba').place(x=190, y=50)
+            Label(self.frame, text = 'lbs', fg = 'white', font = ("Helvetica", 12), bg = '#6893ba').place(x=190, y=12)
             #Input Height
-            self.height_ft_entry = Entry(self.frame, width = 10, bg = '#ffffff')
+            self.height_ft_entry = Entry(self.frame, width = 8, fg= 'white', bg='#7cafde', relief = FLAT)
             self.height_ft_entry.place(x = 65, y = 54)
-            self.height_in_entry = Entry(self.frame, width = 10, bg = '#ffffff')
-            self.height_in_entry.place(x = 165, y = 54)
+            self.height_in_entry = Entry(self.frame, width = 8, fg= 'white', bg='#7cafde', relief = FLAT)
+            self.height_in_entry.place(x = 137, y = 54)
             self.cal_pic = PhotoImage(file = "image/calculate.gif")
             cal = Button(self.frame, image = self.cal_pic, command = self.cal_standard, relief = FLAT)
             cal.place(x=80, y=90, width=103, height=33)
